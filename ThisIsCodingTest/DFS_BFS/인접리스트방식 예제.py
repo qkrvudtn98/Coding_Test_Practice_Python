@@ -1,3 +1,4 @@
+# Adjacency List
 graph = [[] for _ in range(3)]
 
 # 노드 0에 연결된 노드 정보 저장 (노드, 거리)
