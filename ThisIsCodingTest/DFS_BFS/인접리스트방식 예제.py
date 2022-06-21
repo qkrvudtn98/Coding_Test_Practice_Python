@@ -1,4 +1,4 @@
-# Adjacency List
+# Adjacency List 인접리스트 방식 예제
 graph = [[] for _ in range(3)]
 
 # 노드 0에 연결된 노드 정보 저장 (노드, 거리)
