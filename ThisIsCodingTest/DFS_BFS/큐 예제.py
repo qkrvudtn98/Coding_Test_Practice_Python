@@ -1,7 +1,7 @@
 # 큐 : 먼저 들어간 데이터 먼저 나옴 / 나중에 들어간 데이터 나중에 나옴 (FIFO)
+# 큐 구현을 위해 deque 라이브러리 사용
 from collections import deque
 
-# 큐 구현을 위해 deque 라이브러리 사용
 queue = deque()
 
 queue.append(5)
