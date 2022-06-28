@@ -1,12 +1,26 @@
-# 색을 칠해야 하는 문제의 수 입력
+# 문제의 수 n 입력 받기
 n = int(input())
 
-# n개의 문자 공백없이 입력
-result = input()
-answer = []
-if result[0] == 'B':
-    for i in reversed(range(n)):
-        answer.append(result[i])
+# n개의 문자열 입력 받기
+string = input()
+
+# string을 R,B를 기준으로 분리
+blue_num = string.split('B')
+red_num = string.split('R')
+
+count_r = 0
+count_b = 0
+
+for i in blue_num:
+    if i != '':
+        count_r += 1
+for i in red_num:
+    if i != '':
+        count_b += 1
+
+if count_r > count_b:
+    answer = count_b + 1
 else:
-    for i in reversed(range(n)):
-        answer.append(result[i])
+    answer = count_r + 1
+
+print(answer)
