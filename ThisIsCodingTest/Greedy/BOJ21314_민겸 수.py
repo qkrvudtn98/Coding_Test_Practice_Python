@@ -1,29 +1,19 @@
 n = input()
 
-# 최댓값 구하는 로직
 max_num = []
-max_count = 0
-for i in range(len(n)):
-    if n[i] == 'M' and n[i+1] == 'K':
-        max_count += 1
-        max_num.append(str(5*(10**max_count)))
-        max_count = 0
-    elif n[i] == 'K' and (n[i-1] =='K' or i==0):
-        max_num.append('5')
-
-# 최솟값 구하는 로직
 min_num = []
-min_count = 0
-for i in range(len(n)):
-    if n[i] == 'M' and i == len(n)-1:
-        min_num.append('1')
-    elif n[i] == 'M' and n[i+1] == 'K':
-        min_count += 1
-        min_num.append(str(10**(min_count-1)))
-        min_count = 0
-    elif n[i] == 'M' and n[i+1] != 'K':
-        min_count += 1
-    else:
-        min_num.append('5')
-min_result = ''.join(min_num)
+mk_num = n.split('K')
 
+for m in mk_num:
+    if m :
+        min_num.append(str(10**(len(m)-1)))
+        max_num.append(str(5*10**(len(m))))
+    else:
+        min_num.append('')
+        max_num.append(str(5))
+
+# max_num의 마지막에 M이 들어올 경우 1이 나와야하는데 문제 특성상 50이 나오게 됨 => 50을 제거하고 1을 추가하는 로직 작성
+max_result = "".join(max_num[:-1]) + '1'*(len(max_num[-1])-1)
+min_result = "5".join(min_num)
+
+print(max_result + '\n' + min_result)
